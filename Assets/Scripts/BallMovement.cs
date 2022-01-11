@@ -40,11 +40,11 @@ namespace JK
             {
                 if(BallNum==0)
                 {
-                    //흰공 힘 방향 결정하자.
+                    //흰공 방향 결정하자.
                     ballDirection=transform.position-PlayerScript.playerPosition;
                     ballDirection.y=0;                
                     Debug.Log(PlayerScript.playerPosition.x.ToString()+','+PlayerScript.playerPosition.z.ToString());
-                    //힘 가함
+                    //힘 가함 -> 누를 수록 늘어나도록 하자.
                     rb.AddForce(ballDirection*500);
 
                     //초기화
