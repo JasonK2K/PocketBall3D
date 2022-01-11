@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4465782, g: 0.49641252, b: 0.5748167, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -381,6 +381,7 @@ GameObject:
   m_Component:
   - component: {fileID: 243980619}
   - component: {fileID: 243980618}
+  - component: {fileID: 243980620}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -400,6 +401,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f762456d3d1b33c44bb876cf3931065d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BallStop:
+    m_PersistentCalls:
+      m_Calls: []
   GameOver:
     m_PersistentCalls:
       m_Calls:
@@ -429,6 +433,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &243980620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 243980617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dec40b1385efbfc4facb566006b3201a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Cam: {fileID: 1959569177}
+  Whiteball: {fileID: 430815037}
 --- !u!1 &278843543
 GameObject:
   m_ObjectHideFlags: 0
@@ -664,6 +682,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ballVelocity: {x: 0, y: 0, z: 0}
+  Cam: {fileID: 1959569177}
 --- !u!1 &531996830
 GameObject:
   m_ObjectHideFlags: 0
@@ -2940,6 +2959,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ballVelocity: {x: 0, y: 0, z: 0}
+  Cam: {fileID: 0}
 --- !u!4 &320881787795832931
 Transform:
   m_ObjectHideFlags: 0
@@ -3181,6 +3201,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ballVelocity: {x: 0, y: 0, z: 0}
+  Cam: {fileID: 0}
 --- !u!4 &632270299997527398
 Transform:
   m_ObjectHideFlags: 0
@@ -3425,6 +3446,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ballVelocity: {x: 0, y: 0, z: 0}
+  Cam: {fileID: 0}
 --- !u!4 &1356398940407388205
 Transform:
   m_ObjectHideFlags: 0
@@ -3551,6 +3573,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ballVelocity: {x: 0, y: 0, z: 0}
+  Cam: {fileID: 0}
 --- !u!4 &1531656502790924489
 Transform:
   m_ObjectHideFlags: 0
@@ -3636,6 +3659,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ballVelocity: {x: 0, y: 0, z: 0}
+  Cam: {fileID: 0}
 --- !u!4 &1726304314957837540
 Transform:
   m_ObjectHideFlags: 0
@@ -3780,6 +3804,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ballVelocity: {x: 0, y: 0, z: 0}
+  Cam: {fileID: 0}
 --- !u!4 &2236971951167793961
 Transform:
   m_ObjectHideFlags: 0
@@ -4158,6 +4183,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ballVelocity: {x: 0, y: 0, z: 0}
+  Cam: {fileID: 0}
 --- !u!1 &3512319667757159013
 GameObject:
   m_ObjectHideFlags: 0
@@ -4308,6 +4334,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ballVelocity: {x: 0, y: 0, z: 0}
+  Cam: {fileID: 0}
 --- !u!1 &3935078159608150021
 GameObject:
   m_ObjectHideFlags: 0
@@ -4430,6 +4457,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ballVelocity: {x: 0, y: 0, z: 0}
+  Cam: {fileID: 0}
 --- !u!4 &4188057826354162004
 Transform:
   m_ObjectHideFlags: 0
@@ -4680,6 +4708,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ballVelocity: {x: 0, y: 0, z: 0}
+  Cam: {fileID: 0}
 --- !u!33 &5303295326500365453
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -4788,6 +4817,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ballVelocity: {x: 0, y: 0, z: 0}
+  Cam: {fileID: 0}
 --- !u!4 &5405323690697907131
 Transform:
   m_ObjectHideFlags: 0
@@ -5153,6 +5183,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ballVelocity: {x: 0, y: 0, z: 0}
+  Cam: {fileID: 0}
 --- !u!23 &6592847554004460390
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5272,6 +5303,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ballVelocity: {x: 0, y: 0, z: 0}
+  Cam: {fileID: 0}
 --- !u!33 &6658370607324138132
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -5693,6 +5725,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ballVelocity: {x: 0, y: 0, z: 0}
+  Cam: {fileID: 0}
 --- !u!4 &7364079839826745392
 Transform:
   m_ObjectHideFlags: 0
@@ -5915,6 +5948,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ballVelocity: {x: 0, y: 0, z: 0}
+  Cam: {fileID: 0}
 --- !u!33 &8195331381122554771
 MeshFilter:
   m_ObjectHideFlags: 0
