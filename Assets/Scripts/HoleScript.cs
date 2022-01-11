@@ -52,7 +52,7 @@ namespace JK
                         GameManager.CorL=false;
                     }
                 }
-                Debug.Log(GameManager.CorL.ToString());
+                //Debug.Log(GameManager.CorL.ToString());
                 GameManager.ballChoice=1;
             }
 

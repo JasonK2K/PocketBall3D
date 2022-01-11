@@ -10,6 +10,7 @@ namespace JK
         Rigidbody rb;
         public Vector3 ballVelocity;
         int BallNum;
+        public Vector3 ballDirection;
         //private bool trigger = true;
 
         // Start is called before the first frame update
@@ -33,14 +34,18 @@ namespace JK
 
         void OnMouseDown() //이거 흰공에만 적용해야함
         {
-
-            //Debug.Log(ballVelocity.x.ToString());
+            
+            Debug.Log(GameManager.isBallStop.Sum()); // 공이 없어지면서 뭔가 문제가 생긴듯
             if(GameManager.isBallStop.Sum()==16) // 모든 공이 완전히 멈췄을 때
             {
                 if(BallNum==0)
                 {
+                    //흰공 힘 방향 결정하자.
+                    ballDirection=transform.position-PlayerScript.playerPosition;
+                    ballDirection.y=0;                
+                    Debug.Log(PlayerScript.playerPosition.x.ToString()+','+PlayerScript.playerPosition.z.ToString());
                     //힘 가함
-                    rb.AddForce(1500,0,0);
+                    rb.AddForce(ballDirection*500);
 
                     //초기화
                     for(int i=0; i<16; i++)
@@ -50,7 +55,7 @@ namespace JK
                     
                     foreach (var human in GameManager.isBallStop)
                     {
-                        Debug.Log(human);
+                        //Debug.Log(human);
                     }
                     //boolean 모두 true로 바꾸자
                     for(int j=0; j<16; j++)

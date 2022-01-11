@@ -5,6 +5,8 @@ namespace JK
 {
     public class PlayerScript : MonoBehaviour
     {
+        public static Vector3 playerPosition = Vector3.zero;
+
         // Start is called before the first frame update
         void Start()
         {
@@ -14,20 +16,9 @@ namespace JK
         // Update is called once per frame
         void Update()
         {
+            playerPosition = transform.position;
+
             
-
-
-            //A(왼쪽) 눌렀을 때
-            if(Input.GetKey(KeyCode.A))
-            {
-
-            }
-
-            //D(오른쪽) 눌렀을 때
-            if(Input.GetKey(KeyCode.D))
-            {
-
-            }
         }
     }
 }
