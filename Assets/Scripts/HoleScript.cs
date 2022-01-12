@@ -20,9 +20,9 @@ namespace JK
         
         void OnTriggerEnter(Collider ball)
         {
-            //구멍에 들어가면 해당 번호 GameManager에 기록
-            int BallNum= int.Parse(ball.gameObject.name.Substring(5));
-            for(int i=0; i<16; i++)
+            /* --- 공이 구멍에 들어간 경우 --- */
+            int BallNum = int.Parse(ball.gameObject.name.Substring(5)); //구멍에 들어간 공 번호
+            for (int i=0; i<16; i++) //구멍에 들어간 공을 GameManager에 기록
             {
                 if(i==BallNum)
                 {
@@ -30,83 +30,74 @@ namespace JK
                     Debug.Log(i.ToString());
                 }
             }
+            GameManager.isBallStop[BallNum]=1; // 구멍에 들어간 공은 멈춘 것으로 표시
+            ball.gameObject.SetActive(false); //구멍에 들어간 공은 사라짐(비활성화)
 
-            GameManager.isBallStop[BallNum]=1;
-            //구멍에 들어가면 공 없어짐
-            ball.gameObject.SetActive(false);
 
-            //첫번째 공이 들어간 경우
-            if(GameManager.ballChoice==0)
+            /* --- 브레이크: 구멍에 처음으로 공이 들어간 경우 --- */
+            if (GameManager.ballChoice==0) //아직 목적공이 정해지지 않은 상태
             {
-                if(GameManager.AorB)
+                if(GameManager.AorB) //A의 턴인 경우
                 {
-                    if(BallNum>=9 && BallNum<=15)
+                    if(BallNum>=9 && BallNum<=15) //들어간 공이 띠공인 경우
                     {
-                        GameManager.CorL=false;
+                        GameManager.CorL=false; //A의 목적공은 띠공
                     }
                 }
-                else
+                else //B의 턴인 경우
                 {
-                    if(BallNum>=1 && BallNum<=7)
+                    if(BallNum>=1 && BallNum<=7) //들어간 공이 색공인 경우
                     {
-                        GameManager.CorL=false;
+                        GameManager.CorL=false; //A의 목적공은 띠공
                     }
                 }
                 Debug.Log(GameManager.CorL.ToString());
-                GameManager.ballChoice=1;
+                GameManager.ballChoice=1; //목적공 결정 완료
             }
 
-            //각자 팀에 맞는 공을 넣었는지 확인
-
-            //A팀인 경우
-            if(GameManager.AorB)
+            /* --- 구멍에 넣은 공이 알맞은 목적공인지 확인 --- */
+            if(GameManager.AorB) //A의 턴인 경우
             {
-                if(GameManager.CorL)
+                if(GameManager.CorL) //A의 목적공이 색공인 경우
                 {
                     //알맞게 넣었을 때
-                    if(BallNum>=1 && BallNum<=7)
+                    if(BallNum>=1 && BallNum<=7) //색공인 경우
                     {
-                        GameManager.countA=GameManager.countA-1;
+                        GameManager.countA=GameManager.countA-1; //남은 공 개수 1 차감
                     }
                     //다른 팀 것 넣었을 때
-                    else if(BallNum>=9 && BallNum<=15)
+                    else if(BallNum>=9 && BallNum<=15) //띠공인 경우
                     {
-
-                        GameManager.AorB=false;
+                        GameManager.AorB=false; //턴 전환
                     }
                     //흰 공 넣었을 때
                     else if(BallNum==0)
                     {
-
-                        GameManager.AorB=false;
+                        GameManager.AorB=false; //턴 전환
                     }
                 }
-                else
+                else //A의 목적공이 띠공인 경우
                 {
                     //알맞게 넣었을 때
-                    if(BallNum>=9 && BallNum<=15)
+                    if(BallNum>=9 && BallNum<=15) //띠공인 경우
                     {
-                        GameManager.countA=GameManager.countA-1;
+                        GameManager.countA=GameManager.countA-1; //남은 공 개수 1 차감
                     }
                     //다른 팀 것 넣었을 때
-                    else if(BallNum>=1 && BallNum<=7)
+                    else if(BallNum>=1 && BallNum<=7) //색공인 경우
                     {
-
-                        GameManager.AorB=false;
+                        GameManager.AorB=false; //턴 전환
                     }
                     //흰 공 넣었을 때
                     else if(BallNum==0)
                     {
-
-                        GameManager.AorB=false;
+                        GameManager.AorB=false; //턴 전환
                     }
                 }
             }
-
-            //B팀인 경우
-            else
+            else //B의 턴인 경우
             {
-                if(GameManager.CorL)
+                if(GameManager.CorL) //A의 목적공이 색공인 경우
                 {
                     //알맞게 넣었을 때
                     if(BallNum>=9 && BallNum<=15)
@@ -116,17 +107,15 @@ namespace JK
                     //다른 팀 것 넣었을 때
                     else if(BallNum>=1 && BallNum<=7)
                     {
-
                         GameManager.AorB=true;
                     }
                     //흰 공 넣었을 때
                     else if(BallNum==0)
                     {
-
                         GameManager.AorB=true;
                     }
                 }
-                else
+                else //A의 목적공이 띠공인 경우
                 {
                     //알맞게 넣었을 때
                     if(BallNum>=1 && BallNum<=7)
@@ -136,13 +125,11 @@ namespace JK
                     //다른 팀 것 넣었을 때
                     else if(BallNum>=9 && BallNum<=15)
                     {
-
                         GameManager.AorB=true;
                     }
                     //흰 공 넣었을 때
                     else if(BallNum==0)
                     {
-
                         GameManager.AorB=true;
                     }
                 }
@@ -151,10 +138,8 @@ namespace JK
             //OnTriggerEnter 끝난 후
 
 
-
             
         }
-
 
 
     }
