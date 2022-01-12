@@ -40,7 +40,12 @@ namespace JK
                 if(BallNum==0)
                 {
                     //힘 가함
-                    rb.AddForce(1500,0,0);
+                    //rb.AddForce(1500,0,0);
+                    rb.AddForce(Camera.main.transform.forward * 500);
+                    // public void AddForce(Vector3 force, ForceMode mode = ForceMode.Force);
+                    // Vector3 force : 방향 * 힘
+                    // ForceMode 안 써도 default 값으로 진행
+                    // Acceleration, Force, Impulse, VelocityChange
 
                     //초기화
                     for(int i=0; i<16; i++)
