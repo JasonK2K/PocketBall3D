@@ -11,8 +11,8 @@ namespace JK
         public Transform Cam;
         public Transform Whiteball;
 
-        Vector3 Wheel_Init_Posit;
-        Vector3 Wheel_Fin_Posit;
+        public Vector3 Wheel_Init_Posit;
+        public Vector3 Wheel_Fin_Posit;
 
         float horizontal = 0;
         float vertical = 0;
@@ -26,10 +26,12 @@ namespace JK
         // Update is called once per frame
         void Update()
         {
-            
-            Vector3 Fordir = Wheel_Init_Posit - Wheel_Fin_Posit;
-            vertical = Fordir.y;
-            horizontal = Mathf.Sqrt((Fordir.x)*(Fordir.x) +(Fordir.z)*(Fordir.z));
+            MousePosit();
+            // 픽셀 화면에서의 vertical과 horizontal 픽셀화면에 대한 비율 맞춰서 줄이기
+            // Screen.width = 884, Screen.height = 515
+            Vector3 Fordir = Wheel_Fin_Posit - Wheel_Init_Posit;
+            vertical = Fordir.y * 69.999f / Screen.width ;
+            horizontal = Fordir.x * 69.999f / Screen.height;
             
 
         }
@@ -74,11 +76,6 @@ namespace JK
             {
                 Wheel_Fin_Posit = Input.mousePosition;
             }
-        }
-
-        private void OnMouseDown()
-        {
-            MousePosit();
         }
 
     }

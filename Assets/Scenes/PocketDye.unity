@@ -447,6 +447,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Cam: {fileID: 1959569177}
   Whiteball: {fileID: 430815037}
+  Wheel_Init_Posit: {x: 0, y: 0, z: 0}
+  Wheel_Fin_Posit: {x: 0, y: 0, z: 0}
 --- !u!1 &278843543
 GameObject:
   m_ObjectHideFlags: 0
@@ -683,6 +685,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ballVelocity: {x: 0, y: 0, z: 0}
   Cam: {fileID: 1959569177}
+  hr: {fileID: 243980620}
 --- !u!1 &531996830
 GameObject:
   m_ObjectHideFlags: 0
@@ -2960,6 +2963,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ballVelocity: {x: 0, y: 0, z: 0}
   Cam: {fileID: 0}
+  hr: {fileID: 0}
 --- !u!4 &320881787795832931
 Transform:
   m_ObjectHideFlags: 0
@@ -3202,6 +3206,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ballVelocity: {x: 0, y: 0, z: 0}
   Cam: {fileID: 0}
+  hr: {fileID: 0}
 --- !u!4 &632270299997527398
 Transform:
   m_ObjectHideFlags: 0
@@ -3447,6 +3452,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ballVelocity: {x: 0, y: 0, z: 0}
   Cam: {fileID: 0}
+  hr: {fileID: 0}
 --- !u!4 &1356398940407388205
 Transform:
   m_ObjectHideFlags: 0
@@ -3574,6 +3580,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ballVelocity: {x: 0, y: 0, z: 0}
   Cam: {fileID: 0}
+  hr: {fileID: 0}
 --- !u!4 &1531656502790924489
 Transform:
   m_ObjectHideFlags: 0
@@ -3660,6 +3667,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ballVelocity: {x: 0, y: 0, z: 0}
   Cam: {fileID: 0}
+  hr: {fileID: 0}
 --- !u!4 &1726304314957837540
 Transform:
   m_ObjectHideFlags: 0
@@ -3805,6 +3813,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ballVelocity: {x: 0, y: 0, z: 0}
   Cam: {fileID: 0}
+  hr: {fileID: 0}
 --- !u!4 &2236971951167793961
 Transform:
   m_ObjectHideFlags: 0
@@ -4184,6 +4193,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ballVelocity: {x: 0, y: 0, z: 0}
   Cam: {fileID: 0}
+  hr: {fileID: 0}
 --- !u!1 &3512319667757159013
 GameObject:
   m_ObjectHideFlags: 0
@@ -4335,6 +4345,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ballVelocity: {x: 0, y: 0, z: 0}
   Cam: {fileID: 0}
+  hr: {fileID: 0}
 --- !u!1 &3935078159608150021
 GameObject:
   m_ObjectHideFlags: 0
@@ -4458,6 +4469,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ballVelocity: {x: 0, y: 0, z: 0}
   Cam: {fileID: 0}
+  hr: {fileID: 0}
 --- !u!4 &4188057826354162004
 Transform:
   m_ObjectHideFlags: 0
@@ -4709,6 +4721,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ballVelocity: {x: 0, y: 0, z: 0}
   Cam: {fileID: 0}
+  hr: {fileID: 0}
 --- !u!33 &5303295326500365453
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -4818,6 +4831,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ballVelocity: {x: 0, y: 0, z: 0}
   Cam: {fileID: 0}
+  hr: {fileID: 0}
 --- !u!4 &5405323690697907131
 Transform:
   m_ObjectHideFlags: 0
@@ -5184,6 +5198,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ballVelocity: {x: 0, y: 0, z: 0}
   Cam: {fileID: 0}
+  hr: {fileID: 0}
 --- !u!23 &6592847554004460390
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5304,6 +5319,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ballVelocity: {x: 0, y: 0, z: 0}
   Cam: {fileID: 0}
+  hr: {fileID: 0}
 --- !u!33 &6658370607324138132
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -5726,6 +5742,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ballVelocity: {x: 0, y: 0, z: 0}
   Cam: {fileID: 0}
+  hr: {fileID: 0}
 --- !u!4 &7364079839826745392
 Transform:
   m_ObjectHideFlags: 0
@@ -5949,6 +5966,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ballVelocity: {x: 0, y: 0, z: 0}
   Cam: {fileID: 0}
+  hr: {fileID: 0}
 --- !u!33 &8195331381122554771
 MeshFilter:
   m_ObjectHideFlags: 0
