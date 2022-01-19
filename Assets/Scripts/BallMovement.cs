@@ -11,6 +11,8 @@ namespace JK
         public Vector3 ballVelocity;
         int BallNum;
         //private bool trigger = true;
+        public float ballForce;
+
 
         // Start is called before the first frame update
         void Start()
@@ -41,7 +43,7 @@ namespace JK
                 {
                     //힘 가함
                     //rb.AddForce(1500,0,0);
-                    rb.AddForce(Camera.main.transform.forward * 500);
+                    rb.AddForce(Camera.main.transform.forward * BallForce);
                     // public void AddForce(Vector3 force, ForceMode mode = ForceMode.Force);
                     // Vector3 force : 방향 * 힘
                     // ForceMode 안 써도 default 값으로 진행
