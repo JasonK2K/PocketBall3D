@@ -23,36 +23,36 @@ namespace JK
         void Update()
         {
             ballVelocity=rb.velocity;
-            if(ballVelocity == Vector3.zero && GameManager.Arraytrigger[BallNum]) // 공이 완전히 멈췄을 때
+            if(ballVelocity == Vector3.zero && GameManager.Arraytrigger[BallNum]) //공이 완전히 멈췄을 때
             {
                 //Debug.Log("Hi"+BallNum.ToString());
-                GameManager.isBallStop[BallNum]=1;
+                GameManager.isBallStop[BallNum]=1; //공이 멈췄음을 표시
                 GameManager.Arraytrigger[BallNum]=false;
             }
         }
 
-        void OnMouseDown() //이거 흰공에만 적용해야함
+        void OnMouseDown() //흰 공에만 적용
         {
-
             //Debug.Log(ballVelocity.x.ToString());
-            if(GameManager.isBallStop.Sum()==16) // 모든 공이 완전히 멈췄을 때
+            if(GameManager.isBallStop.Sum()==16) // 모든 공이 완전히 멈춘 경우
             {
-                if(BallNum==0)
+                if(BallNum==0) //흰 공을 클릭한 경우
                 {
                     //힘 가함
-                    rb.AddForce(1500,0,0);
+                    //rb.AddForce(1500,0,0);
+                    rb.AddForce(Camera.main.transform.forward * 1000);
 
-                    //초기화
-                    for(int i=0; i<16; i++)
+                    //모든 공을 움직이는 상태로 표시 변경
+                    for (int i=0; i<16; i++)
                     {
                         GameManager.isBallStop[i]=0;
                     }
-                    
+                    // ?
                     foreach (var human in GameManager.isBallStop)
                     {
                         Debug.Log(human);
                     }
-                    //boolean 모두 true로 바꾸자
+                    //Array Trigger 초기화
                     for(int j=0; j<16; j++)
                     {
                         GameManager.Arraytrigger[j]=true;
