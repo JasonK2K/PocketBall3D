@@ -48,13 +48,13 @@ namespace JK
 
                     Vector3 direction = (rb.position - Cam.position).normalized;
                     direction.y = 0;
-                    rb.AddForce(direction * 1000f);
+                    //rb.AddForce(direction * 1000f);
                     // 타격 위치 확인 위한 debug.log
                     Debug.Log(hr.ForcedPoint());
+                    Debug.Log(hr.BallPosit());
+
+                    rb.AddForceAtPosition(direction*10f, hr.ForcedPoint(), ForceMode.Force);
                     
-                    // 휠의 움직임을 통해서 공의 바깥면에 힘을 작용할 위치를 원하는대로 임의로 조정하고자 하는 함수인데 디버깅이 필요합니다.
-                     
-                   // rb.AddForceAtPosition(direction * 1500f, hr.ForcedPoint());
 
                     //초기화
                     for(int i=0; i<16; i++)

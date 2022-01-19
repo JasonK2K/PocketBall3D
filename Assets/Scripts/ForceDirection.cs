@@ -9,6 +9,7 @@ namespace JK
 
         
         public Transform Cam;
+        // 자식 오브젝트인 whiteball의 local 좌표
         public Transform Whiteball;
 
         public Vector3 Wheel_Init_Posit;
@@ -53,7 +54,7 @@ namespace JK
             {
                 Vector3 normal = -(Whiteball.position - Cam.position).normalized * 69.999f;
                 normal.y = 0;
-                return Whiteball.position + normal;
+                return normal + Whiteball.localPosition;
             }               
 
             Vector3 Point;
@@ -62,7 +63,7 @@ namespace JK
             Point.x = horizontal * Mathf.Sin(theta) - Mathf.Sqrt(69.999f * 69.999f - horizontal * horizontal - vertical * vertical) * Mathf.Cos(theta);
             Point.z = -horizontal * Mathf.Cos(theta) - Mathf.Sqrt(69.999f * 69.999f - horizontal * horizontal - vertical * vertical) * Mathf.Sin(theta);
 
-            return Point + Whiteball.position;
+            return Point + Whiteball.localPosition;
         }
 
         void MousePosit()
@@ -78,5 +79,9 @@ namespace JK
             }
         }
 
+        public Vector3 BallPosit()
+        {
+            return Whiteball.localPosition;
+        }
     }
 }
